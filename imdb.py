@@ -1,26 +1,48 @@
 
 # -- Here are the six functions you need to implement
 
+# -- List movies by year
+#    Given a year (int) and a list of movies, print out the titles of the movies
+#    made in that year
 def movies_by_year(year, movies):
     print("Not yet implemented")
 
+# -- Average movie box office gross
+#    Given a list of movies, compute the average amount of money in ticket sales
+#    made by any movie in the list
 def average_gross(movies):
     print("Not yet implemented")
 
+# -- Highest and lowest grossing movies
+#    Given a list of movies, print the titles of the movie that made the most
+#    money and the movie that made the least money
 def best_worst_movies(movies):
     print("Not yet implemented")
 
+# -- Actor filmography
+#    Given an actor name (string) and a list of movies, print the titles of all
+#    movies in which that actor appeared
 def actor_filmography(actor, movies):
     print("Not yet implemented")
 
+# -- Movie gross in a year
+#    Given a year and a list of movies, print the total amount of money made by
+#    all the movies in that year together
 def year_gross(year, movies):
     print("Not yet implemented")
 
+# -- Best year
+#    Given a list of movies, determine which year had the highest total money
+#    made for all movies in that year.
 def best_year(movies):
     print("Not yet implemented")
 
-# -- This function reads the data in from a file and stores
-#    it in the list of tuples data structure
+# ----------------------------------------------------------------------------
+#    You should not need to change any of the code below, but take a look
+#    at it to make sure understand what it does...
+
+# -- This function reads the data from a file and stores it in the list of
+#    tuples data structure
 def read_movie_file(moviefile):
     # -- Open the file and read all the lines into a big list
     with open(moviefile) as f:
@@ -42,7 +64,7 @@ def read_movie_file(moviefile):
     return movielist
 
 # -- Here's where the program actually starts running...
-filename = input('Enter IMDB file name:')
+filename = input('Enter IMDB file name: ')
 movies = read_movie_file((filename))
 # print(movies)
 
@@ -55,11 +77,11 @@ while not done:
     print('4: Find all the movies with a given actor')
     print('5: Compute total box office gross for a given year')
     print('6: Find the highest grossing year')
-    s = input("Enter 1-6 (any other number to quit): ")
+    s = input('Enter 1-6 (any other number to quit): ')
 
     choice = int(s)
     if choice == 1:
-        y = input("Enter a year: ")
+        y = input('Enter a year: ')
         year = int(y)
         movies_by_year(year, movies)
     elif choice == 2:
@@ -67,10 +89,10 @@ while not done:
     elif choice == 3:
         best_worst_movies(movies)
     elif choice == 4:
-        actor = input("Enter actor name: ")
+        actor = input('Enter actor name: ')
         actor_filmography(actor, movies)
     elif choice == 5:
-        y = input("Enter a year: ")
+        y = input('Enter a year: ')
         year = int(y)
         year_gross(year, movies)
     elif choice == 6:
