@@ -1,5 +1,12 @@
 
-# -- Here are the six functions you need to implement
+# -- Here are the seven functions you need to implement
+
+# -- Find a movie by title
+#    Given a movie title (string) and a list of movies, find that movie in the
+#    list (if it is there), and print out all of the information about it.
+#    Bonus: print out a message if the given title is NOT in the list
+def find_movie_by_title(title, movies):
+    print("Not yet implemented")
 
 # -- List movies by year
 #    Given a year (int) and a list of movies, print out the titles of the movies
@@ -71,31 +78,35 @@ movies = read_movie_file((filename))
 done = False
 while not done:
     print('Choose a query...')
-    print('1: List movies made in a given year')
-    print('2: Compute average box office gross')
-    print('3: Find highest and lowest grossing movies')
-    print('4: Find all the movies with a given actor')
-    print('5: Compute total box office gross for a given year')
-    print('6: Find the highest grossing year')
-    s = input('Enter 1-6 (any other number to quit): ')
+    print('1: Find a movie by title')
+    print('2: List movies made in a given year')
+    print('3: Compute average box office gross')
+    print('4: Find highest and lowest grossing movies')
+    print('5: Find all the movies with a given actor')
+    print('6: Compute total box office gross for a given year')
+    print('7: Find the highest grossing year')
+    s = input('Enter 1-7 (any other number to quit): ')
 
     choice = int(s)
     if choice == 1:
+        t = input('Enter a title: ')
+        find_movie_by_title(t, movies)
+    elif choice == 2:
         y = input('Enter a year: ')
         year = int(y)
         movies_by_year(year, movies)
-    elif choice == 2:
-        average_gross(movies)
     elif choice == 3:
-        best_worst_movies(movies)
+        average_gross(movies)
     elif choice == 4:
+        best_worst_movies(movies)
+    elif choice == 5:
         actor = input('Enter actor name: ')
         actor_filmography(actor, movies)
-    elif choice == 5:
+    elif choice == 6:
         y = input('Enter a year: ')
         year = int(y)
         year_gross(year, movies)
-    elif choice == 6:
+    elif choice == 7:
         best_year(movies)
     else:
         done = True
