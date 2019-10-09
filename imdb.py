@@ -118,7 +118,7 @@ while not done:
         m = best_movie(movies)
         print(m)
     elif choice == 5:
-        worst_movie(movies)
+        m = worst_movie(movies)
         print(m)
     elif choice == 6:
         actor = input('Enter actor name: ')
