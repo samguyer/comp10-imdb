@@ -3,46 +3,59 @@
 
 # -- Find a movie by title
 #    Given a movie title (string) and a list of movies, find that movie in the
-#    list (if it is there), and print out all of the information about it.
-#    Bonus: print out a message if the given title is NOT in the list
+#    list (if it is there). Return the full tuple, or None if not found.
 def find_movie_by_title(title, movies):
     print("Not yet implemented")
+    return None
 
 # -- List movies by year
-#    Given a year (int) and a list of movies, print out the titles of the movies
-#    made in that year
+#    Given a year (int) and a list of movies, return a list of movies made in
+#    that year.
 def movies_by_year(year, movies):
     print("Not yet implemented")
+    return None
 
 # -- Average movie box office gross
 #    Given a list of movies, compute the average amount of money in ticket sales
 #    made by any movie in the list
 def average_gross(movies):
     print("Not yet implemented")
+    return 0
 
-# -- Highest and lowest grossing movies
-#    Given a list of movies, print the titles of the movie that made the most
-#    money and the movie that made the least money
-def best_worst_movies(movies):
+# -- Highest grossing movie
+#    Given a list of movies, return the movie that made the most money of
+#    all the movies in the list
+def best_movie(movies):
     print("Not yet implemented")
+    return None
+
+# -- Highest grossing movie
+#    Given a list of movies, return the movie that made the least money of
+#    all the movies in the list
+def worst_movie(movies):
+    print("Not yet implemented")
+    return None
 
 # -- Actor filmography
-#    Given an actor name (string) and a list of movies, print the titles of all
-#    movies in which that actor appeared
+#    Given an actor name (string) and a list of movies, return the list of
+#    all movies in which that actor appears
 def actor_filmography(actor, movies):
     print("Not yet implemented")
+    return None
 
 # -- Movie gross in a year
-#    Given a year and a list of movies, print the total amount of money made by
+#    Given a year and a list of movies, return the total amount of money made by
 #    all the movies in that year together
 def year_gross(year, movies):
     print("Not yet implemented")
+    return 0
 
 # -- Best year
 #    Given a list of movies, determine which year had the highest total money
 #    made for all movies in that year.
 def best_year(movies):
     print("Not yet implemented")
+    return 1900
 
 # ----------------------------------------------------------------------------
 #    You should not need to change any of the code below, but take a look
@@ -81,33 +94,44 @@ while not done:
     print('1: Find a movie by title')
     print('2: List movies made in a given year')
     print('3: Compute average box office gross')
-    print('4: Find highest and lowest grossing movies')
-    print('5: Find all the movies with a given actor')
-    print('6: Compute total box office gross for a given year')
-    print('7: Find the highest grossing year')
-    s = input('Enter 1-7 (any other number to quit): ')
+    print('4: Find highest grossing movie')
+    print('5: Find lowest grossing movie')
+    print('6: Find all the movies with a given actor')
+    print('7: Compute total box office gross for a given year')
+    print('8: Find the highest grossing year')
+    s = input('Enter 1-8 (any other number to quit): ')
 
     choice = int(s)
     if choice == 1:
         t = input('Enter a title: ')
-        find_movie_by_title(t, movies)
+        m = find_movie_by_title(t, movies)
+        print(m)
     elif choice == 2:
         y = input('Enter a year: ')
         year = int(y)
-        movies_by_year(year, movies)
+        result = movies_by_year(year, movies)
+        print(result)
     elif choice == 3:
-        average_gross(movies)
+        g = average_gross(movies)
+        print("Average gross is $" + str(g))
     elif choice == 4:
-        best_worst_movies(movies)
+        m = best_movie(movies)
+        print(m)
     elif choice == 5:
-        actor = input('Enter actor name: ')
-        actor_filmography(actor, movies)
+        worst_movie(movies)
+        print(m)
     elif choice == 6:
+        actor = input('Enter actor name: ')
+        result = actor_filmography(actor, movies)
+        print(result)
+    elif choice == 7:
         y = input('Enter a year: ')
         year = int(y)
-        year_gross(year, movies)
-    elif choice == 7:
-        best_year(movies)
+        g = year_gross(year, movies)
+        print("Total gross is $" + str(g))
+    elif choice == 8:
+        y = best_year(movies)
+        print(y)
     else:
         done = True
 
